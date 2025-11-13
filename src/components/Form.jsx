@@ -11,7 +11,13 @@ export default function Form({ endpoint }) {
   const [formData, setFormData] = useState(defaultFormData);
 
   function handleSubmit() {}
-  function handleChange() {}
+  function handleChange(e) {
+    const { name, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === "checkbox" ? checked : value,
+    });
+  }
 
   return (
     <div>
@@ -38,29 +44,15 @@ export default function Form({ endpoint }) {
           Body:
           <textarea name="body" value={formData.body} onChange={handleChange} />
         </label>
-        <div>
-          <legend>Visibilità</legend>
-          <label>
-            Privato
-            <input
-              type="radio"
-              name="radio"
-              value="private"
-              checked={formData.public === "private"}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Pubblico
-            <input
-              type="radio"
-              name="radio"
-              value="public"
-              checked={formData.public === "public"}
-              onChange={handleChange}
-            />
-          </label>
-        </div>
+        <label>
+          Public:
+          <input
+            type="checkbox"
+            name="public"
+            checked={formData.public}
+            onChange={handleChange}
+          />
+        </label>
       </form>
     </div>
   );
