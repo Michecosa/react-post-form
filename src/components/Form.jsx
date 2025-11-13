@@ -43,13 +43,17 @@ export default function Form({ endpoint }) {
   }
 
   return (
-    <div>
+    <div className="d-flex justify-content-center my-4">
       {message && (
         <p style={{ color: message.type === "success" ? "green" : "red" }}>
           {message.message}
         </p>
       )}
-      <form onSubmit={handleSubmit}>
+      <form
+        style={{ width: "600px" }}
+        className="row g-3"
+        onSubmit={handleSubmit}
+      >
         <label className="form-label">
           Titolo:
           <input
@@ -83,9 +87,9 @@ export default function Form({ endpoint }) {
           />
         </label>
         <label className="form-check-label">
-          Public:
+          Public :
           <input
-            className="form-check-input"
+            className="form-check-input ms-2"
             id="public"
             type="checkbox"
             name="public"
