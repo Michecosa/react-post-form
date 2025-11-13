@@ -53,6 +53,7 @@ export default function Form({ endpoint }) {
         <label>
           Titolo:
           <input
+            id="title"
             type="text"
             name="title"
             value={formData.title}
@@ -62,6 +63,7 @@ export default function Form({ endpoint }) {
         <label>
           Autore:
           <input
+            id="author"
             type="text"
             name="author"
             value={formData.author}
@@ -70,11 +72,17 @@ export default function Form({ endpoint }) {
         </label>
         <label>
           Body:
-          <textarea name="body" value={formData.body} onChange={handleChange} />
+          <textarea
+            id="body"
+            name="body"
+            value={formData.body}
+            onChange={handleChange}
+          />
         </label>
         <label>
           Public:
           <input
+            id="public"
             type="checkbox"
             name="public"
             checked={formData.public}
