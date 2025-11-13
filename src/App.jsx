@@ -4,7 +4,9 @@ import Form from "./components/Form";
 function App() {
   return (
     <>
-      <Form endpoint={endpointUrl} />
+      <div className="container">
+        <Form endpoint={endpointUrl} />
+      </div>
     </>
   );
 }
