@@ -25,6 +25,19 @@ export default function Form({ endpoint }) {
             onChange={handleChange}
           />
         </label>
+        <label>
+          Autore:
+          <input
+            type="text"
+            name="author"
+            value={formData.author}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Body:
+          <textarea name="body" value={formData.body} onChange={handleChange} />
+        </label>
       </form>
     </div>
   );
