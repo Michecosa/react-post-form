@@ -43,7 +43,7 @@ export default function Form({ endpoint }) {
   }
 
   return (
-    <div className="d-flex justify-content-center my-4">
+    <div className="d-flex justify-content-center mt-5">
       {message && (
         <p style={{ color: message.type === "success" ? "green" : "red" }}>
           {message.message}
@@ -51,10 +51,10 @@ export default function Form({ endpoint }) {
       )}
       <form
         style={{ width: "600px" }}
-        className="row g-3"
+        className="row g-3 border rounded-4 p-5 shadow-lg bg-body-tertiary"
         onSubmit={handleSubmit}
       >
-        <label className="form-label">
+        <label className="form-label mt-0">
           Titolo:
           <input
             className="form-control"
@@ -63,6 +63,7 @@ export default function Form({ endpoint }) {
             name="title"
             value={formData.title}
             onChange={handleChange}
+            required
           />
         </label>
         <label className="form-label">
@@ -74,6 +75,7 @@ export default function Form({ endpoint }) {
             name="author"
             value={formData.author}
             onChange={handleChange}
+            required
           />
         </label>
         <label className="form-label">
