@@ -22,7 +22,7 @@ export default function Form({ endpoint }) {
         console.log(response);
         if (response.status === 201) {
           setMessage({
-            message: "Daje",
+            message: "La tua storia è stata mandata con successo!",
             type: "success",
           });
           setFormData(defaultFormData);
@@ -49,10 +49,16 @@ export default function Form({ endpoint }) {
     >
       <h4 className="mb-3">Raccontaci qualcosa</h4>
       {message && (
-        <p style={{ color: message.type === "success" ? "green" : "red" }}>
+        <div
+          className={`alert ${
+            message.type === "success" ? "alert-success" : "alert-danger"
+          }`}
+          role="alert"
+        >
           {message.message}
-        </p>
+        </div>
       )}
+
       <form className="row g-3 " onSubmit={handleSubmit}>
         <label className="form-label mt-0">
           Titolo:
