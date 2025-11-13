@@ -8,6 +8,24 @@ export default function Form({ endpoint }) {
     body: "",
     public: false,
   };
-
   const [formData, setFormData] = useState(defaultFormData);
+
+  function handleSubmit() {}
+  function handleChange() {}
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Titolo:
+          <input
+            type="text"
+            name="title"
+            value={formData.title}
+            onChange={handleChange}
+          />
+        </label>
+      </form>
+    </div>
+  );
 }
