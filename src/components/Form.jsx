@@ -50,9 +50,10 @@ export default function Form({ endpoint }) {
         </p>
       )}
       <form onSubmit={handleSubmit}>
-        <label>
+        <label className="form-label">
           Titolo:
           <input
+            className="form-control"
             id="title"
             type="text"
             name="title"
@@ -60,9 +61,10 @@ export default function Form({ endpoint }) {
             onChange={handleChange}
           />
         </label>
-        <label>
+        <label className="form-label">
           Autore:
           <input
+            className="form-control"
             id="author"
             type="text"
             name="author"
@@ -70,18 +72,20 @@ export default function Form({ endpoint }) {
             onChange={handleChange}
           />
         </label>
-        <label>
+        <label className="form-label">
           Body:
           <textarea
+            className="form-control"
             id="body"
             name="body"
             value={formData.body}
             onChange={handleChange}
           />
         </label>
-        <label>
+        <label className="form-check-label">
           Public:
           <input
+            className="form-check-input"
             id="public"
             type="checkbox"
             name="public"
@@ -89,7 +93,9 @@ export default function Form({ endpoint }) {
             onChange={handleChange}
           />
         </label>
-        <button type="submit">Invia</button>
+        <button className="btn btn-primary" type="submit">
+          Invia
+        </button>
       </form>
     </div>
   );
