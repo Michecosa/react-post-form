@@ -53,6 +53,7 @@ export default function Form({ endpoint }) {
             onChange={handleChange}
           />
         </label>
+        <button type="submit">Invia</button>
       </form>
     </div>
   );
