@@ -43,17 +43,17 @@ export default function Form({ endpoint }) {
   }
 
   return (
-    <div className="d-flex justify-content-center mt-5">
+    <div
+      style={{ width: "600px", margin: "0 auto" }}
+      className="d-flex row justify-content-center mt-5 p-5 border rounded-4 shadow-lg bg-body-tertiary"
+    >
+      <h4 className="mb-3">Raccontaci qualcosa</h4>
       {message && (
         <p style={{ color: message.type === "success" ? "green" : "red" }}>
           {message.message}
         </p>
       )}
-      <form
-        style={{ width: "600px" }}
-        className="row g-3 border rounded-4 p-5 shadow-lg bg-body-tertiary"
-        onSubmit={handleSubmit}
-      >
+      <form className="row g-3 " onSubmit={handleSubmit}>
         <label className="form-label mt-0">
           Titolo:
           <input
