@@ -9,8 +9,31 @@ export default function Form({ endpoint }) {
     public: false,
   };
   const [formData, setFormData] = useState(defaultFormData);
+  const [message, setMessage] = useState(null);
 
-  function handleSubmit() {}
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    axios
+      .post(endpoint, formData, {
+        headers: { "Content-Type": "application/json" },
+      })
+      .then((response) => {
+        console.log(response);
+        if (response.status === 201) {
+          setMessage({
+            message: "Daje",
+            type: "success",
+          });
+          setFormData(defaultFormData);
+        }
+      })
+      .catch((err) => {
+        console.log(err.message);
+        setMessage({ message: err.message, type: "danger" });
+      });
+  }
+
   function handleChange(e) {
     const { name, value, type, checked } = e.target;
     setFormData({
