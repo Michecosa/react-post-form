@@ -44,6 +44,11 @@ export default function Form({ endpoint }) {
 
   return (
     <div>
+      {message && (
+        <p style={{ color: message.type === "success" ? "green" : "red" }}>
+          {message.message}
+        </p>
+      )}
       <form onSubmit={handleSubmit}>
         <label>
           Titolo:
